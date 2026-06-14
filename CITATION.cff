@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Researcher"
+  given-names: "Independent"
+title: "Cross-Architecture Layer Grafting: Asymmetric Multimodal and Multi-Domain Integration"
+version: 0.1-alpha
+date-released: 2026-06-14
+url: "https://github.com/username/calg-fusionlm"
