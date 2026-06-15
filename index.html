@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Architecture Layer Grafting (CALG) | FusionLM</title>
+    <meta name="description" content="Experimental Fusion of Heterogeneous Foundation Models Under Consumer Hardware Constraints">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="notice-box">
+                <div class="notice-icon">⚠️</div>
+                <div class="notice-text">
+                    <strong>IMPORTANT NOTICE:</strong> This project demonstrates structural and systems-level feasibility only. The current architecture is not a production-ready multimodal model and does not yet achieve successful capability transfer.
+                </div>
+            </div>
+
+            <h1>Cross-Architecture<br><span class="gradient-text">Layer Grafting</span> (CALG)</h1>
+            <p class="subtitle">Experimental Fusion of Heterogeneous Foundation Models Under Consumer Hardware Constraints</p>
+
+            <div class="meta-info">
+                <span class="tag">Version: FusionLM-v0.1-alpha</span>
+                <span class="tag">Status: Experimental Systems Architecture Feasibility Study</span>
+                <span class="tag">Last Updated: June 2026</span>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#paper" class="btn primary-btn">Read Full Paper</a>
+                <a href="paper/papper%20(3).pdf" class="btn secondary-btn" target="_blank" rel="noreferrer noopener">Open PDF</a>
+                <a href="methodology.html" class="btn secondary-btn">Methodology Summary</a>
+            </div>
+        </div>
+        <div class="hero-bg-effect"></div>
+    </header>
+
+    <main class="container paper-layout">
+        <section class="card glass-card">
+            <h2>Overview</h2>
+            <p>Cross-Architecture Layer Grafting (CALG) is an experimental systems architecture methodology exploring whether independently trained foundation models can be physically combined into a single executable neural graph without joint pretraining, instruction tuning, or full-scale backpropagation.</p>
+
+            <blockquote class="core-question">
+                Can structurally incompatible neural networks be mechanically fused and executed as a single runtime architecture using only dimensional projection, low-rank transformation, and localized graph modifications?
+            </blockquote>
+
+            <p>To investigate this question, I constructed an experimental hybrid architecture named <strong>FusionLM-v0.1-alpha</strong>.</p>
+
+            <p>FusionLM combines:</p>
+            <ul class="feature-list">
+                <li><strong>Phi-4-mini-instruct</strong> as the host language backbone</li>
+                <li>The visual subsystem from <strong>Llama-3.2-11B-Vision-Instruct</strong></li>
+                <li>Coding-domain task vector deltas derived from <strong>Qwen2.5-Coder</strong></li>
+                <li>Mathematics-domain task vector deltas derived from <strong>Gemma-2-Math</strong></li>
+            </ul>
+            <p>These components originate from unrelated model families with incompatible hidden dimensions, initialization histories, and latent geometries. Rather than retraining the architecture, CALG attempts to bridge these incompatibilities through explicit dimensional mapping and low-rank projection.</p>
+        </section>
+
+        <div class="grid-2">
+            <section class="card success-card">
+                <h2>What This Work Demonstrates</h2>
+                <ul class="checklist">
+                    <li>Structural integration of heterogeneous model components</li>
+                    <li>Runtime graph stabilization after cross-family modification</li>
+                    <li>Successful tensor-level execution of the resulting composite architecture</li>
+                    <li>Stable inference execution within a 15 GB VRAM budget</li>
+                    <li>Measurable activation participation from grafted layers</li>
+                </ul>
+            </section>
+
+            <section class="card warning-card">
+                <h2>What This Work Does NOT Demonstrate</h2>
+                <ul class="crosslist">
+                    <li>Successful capability transfer</li>
+                    <li>Functional multimodal reasoning</li>
+                    <li>State-of-the-art performance</li>
+                    <li>Semantic interoperability between model families</li>
+                </ul>
+                <p class="muted-text mt-4">The resulting architecture exhibits severe representation-space mismatch and produces semantically degraded outputs. The significance of the work is therefore architectural rather than capability-based.</p>
+            </section>
+        </div>
+
+        <article id="paper" class="paper-card card">
+            <section>
+                <h2>Abstract</h2>
+                <p>Training multimodal and multi-domain large language models traditionally demands massive computational clusters for joint pre-training or instruction alignment. Furthermore, retrofitting an existing language model with highly specialized capabilities often results in catastrophic forgetting or architectural rejection if the source and target networks are structurally disparate. In this paper, we introduce Cross-Architecture Layer Grafting (CALG), a systems-architecture methodology for the asymmetric, zero-shot structural merging of heterogeneous neural networks.</p>
+                <p>As a feasibility proof, we synthesize a tripartite hybrid architecture designated as FusionLM-v0.1-alpha. We graft the vision encoder from Llama-3.2-11B-Vision-Instruct, projected task-vector deltas derived from Qwen2.5-Coder specialization, and projected task-vector deltas derived from Gemma-2-Math specialization directly into a Phi-4-mini-instruct (3.8B) text backbone. We demonstrate that this disjointed composite architecture compiles after runtime graph stabilization and executes stable inference under severe hardware constraints, peaking at 14.37 GB of VRAM and achieving a throughput of 24.0 tokens per second on a single consumer-grade Nvidia T4 GPU.</p>
+            </section>
+
+            <section>
+                <h2>Introduction</h2>
+                <p>The rapid evolution of foundational neural networks has increasingly favored monolithic architectures and compute-intensive alignment phases. When a base language model requires structural adaptation for new sensory modalities or domain-specific parameters, the prevailing paradigm dictates either visual instruction tuning across millions of multi-modal pairs or extensive multi-task continuous pre-training. These methods are economically restrictive, limiting true architectural experimentation to heavily funded institutions and restricting open-source researchers to fine-tuning existing homogeneous weights.</p>
+                <p>CALG diverges from traditional model merging by treating disjoint open-source models as modular components that can be surgically bound together via localized linear transformations, singular value decomposition, and explicit affine projections.</p>
+            </section>
+
+            <section>
+                <h2>Related Work</h2>
+                <p>Post-training weight-space modification has emerged as a critical paradigm for combining specialized model capabilities. However, methods such as SLERP, Task Vectors, TIES-Merging, and DARE are limited by architectural isomorphism.</p>
+                <p>Modular multimodal aligners such as LLaVA and Flamingo show how vision features can be projected into text-centric backbones, but they depend on substantial pre-training and do not address the problem of fusing multiple disjoint text families in one execution graph.</p>
+                <p>Investigations into layer redundancy, such as ShortGPT, motivate the hypothesis that some intermediate transformer blocks may tolerate structural modification or replacement.</p>
+            </section>
+
+            <section>
+                <h2>Methodology</h2>
+                <p>The CALG pipeline consists of asymmetric cross-modal translation, task vector extraction, rank-truncated dimensional alignment, and deep layer structural integration. The host backbone is Phi-4-mini-instruct with hidden dimension $D_{host} = 3072$.</p>
+                <p>The vision encoder output is projected from $7680$ dimensions into the host space using a bridge matrix, while task deltas are extracted from donor checkpoints and mapped into late-stage transformer blocks $L_{28}$ to $L_{31}$.</p>
+                <p>Dynamic graph stabilization patches repair runtime issues such as RoPE handling, tied weights map alignment, and strict keyword argument validation.</p>
+            </section>
+
+            <section>
+                <h2>Results</h2>
+                <p>The structural audit confirmed the bridge tensor shape and the targeted layer footprint. Across repeated inference runs, the model maintained a peak VRAM allocation of 14.37 GB and sustained a stable throughput near 24 tokens per second on an Nvidia T4 GPU.</p>
+                <p>Activation divergence analysis showed that the grafted layers actively participated in the forward computation and produced a distinct geometric signature compared with a random low-rank control.</p>
+            </section>
+
+            <section>
+                <h2>Discussion</h2>
+                <p>The architecture is physically stable and executionally idempotent, but it does not achieve successful zero-shot capability transfer. The failure is attributed to latent manifold mismatch rather than a simple tensor-shape problem.</p>
+                <p>CALG therefore functions as a pre-aligned structural primitive: it proves that heterogeneous components can be mechanically combined into a shared graph, even if semantic alignment still requires further adaptation.</p>
+            </section>
+
+            <section>
+                <h2>Conclusion</h2>
+                <p>Cross-Architecture Layer Grafting establishes a feasible pathway for synthesizing heterogeneous neural graphs under consumer hardware constraints. The next step is boundary-only latent healing, focused on the cross-modal bridge and grafted blocks rather than full-model retraining.</p>
+            </section>
+
+            <section>
+                <h2>References</h2>
+                <ul class="reference-list">
+                    <li>Alayrac et al. (2022), Flamingo: a visual language model for few-shot learning.</li>
+                    <li>Ilharco et al. (2022), Editing models with task vectors.</li>
+                    <li>Liu et al. (2023), Visual instruction tuning.</li>
+                    <li>Men et al. (2024), ShortGPT: Layers in large language models are more redundant than you expect.</li>
+                    <li>Yadav et al. (2023), TIES-Merging: Resolving interference when merging models.</li>
+                    <li>Yu et al. (2024), Language models are super mario: Absorbing abilities from homologous models as a free lunch.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>Copyright © 2026 Harsh Dinodia.</p>
+            <p>GitHub: <a href="https://github.com/harsh2025-sketch" target="_blank" rel="noreferrer noopener">harsh2025-sketch</a></p>
+        </div>
+    </footer>
+</body>
+</html>

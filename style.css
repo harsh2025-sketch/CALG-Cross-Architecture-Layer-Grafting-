@@ -48,7 +48,6 @@ h1, h2, h3, h4 {
 .mb-6 { margin-bottom: 1.5rem; }
 .text-center { text-align: center; }
 
-/* Hero Section */
 .hero {
     padding: 6rem 0 4rem;
     position: relative;
@@ -77,7 +76,6 @@ h1, h2, h3, h4 {
     margin: 0 auto 2rem;
 }
 
-/* Notice Box */
 .notice-box {
     background: rgba(225, 29, 72, 0.05);
     border: 1px solid rgba(225, 29, 72, 0.2);
@@ -99,7 +97,6 @@ h1, h2, h3, h4 {
     color: #be123c;
 }
 
-/* Meta Info */
 .meta-info {
     display: flex;
     justify-content: center;
@@ -118,7 +115,6 @@ h1, h2, h3, h4 {
     color: var(--text-main);
 }
 
-/* Buttons */
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -134,13 +130,31 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 15px var(--accent-glow);
 }
 
+.secondary-btn {
+    background: rgba(15, 23, 42, 0.05);
+    color: var(--text-heading);
+    border: 1px solid var(--border-color);
+    margin-left: 0.75rem;
+}
+
 .primary-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px var(--accent-glow);
     color: white;
 }
 
-/* Cards */
+.secondary-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(15, 23, 42, 0.08);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
 main {
     padding: 4rem 0;
     display: flex;
@@ -167,7 +181,6 @@ main {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
-/* Grid Layouts */
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -180,7 +193,6 @@ main {
     }
 }
 
-/* Blockquotes */
 blockquote {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.1rem;
@@ -197,7 +209,6 @@ blockquote {
     background: rgba(225, 29, 72, 0.05);
 }
 
-/* Lists */
 .feature-list {
     list-style-type: none;
     margin: 1rem 0;
@@ -220,11 +231,13 @@ blockquote {
 .checklist {
     list-style-type: none;
 }
+
 .checklist li {
     padding-left: 1.5rem;
     position: relative;
     margin-bottom: 0.8rem;
 }
+
 .checklist li::before {
     content: '✓';
     position: absolute;
@@ -236,11 +249,13 @@ blockquote {
 .crosslist {
     list-style-type: none;
 }
+
 .crosslist li {
     padding-left: 1.5rem;
     position: relative;
     margin-bottom: 0.8rem;
 }
+
 .crosslist li::before {
     content: '✗';
     position: absolute;
@@ -249,7 +264,6 @@ blockquote {
     font-weight: bold;
 }
 
-/* Mechanisms Grid */
 .mechanism-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -281,7 +295,6 @@ blockquote {
     color: var(--text-heading);
 }
 
-/* Config Grid */
 .config-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -307,7 +320,6 @@ blockquote {
     color: var(--accent-primary);
 }
 
-/* Stats Section */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -358,11 +370,30 @@ blockquote {
     color: var(--success);
 }
 
-/* Highlight Card */
 .highlight-card {
     border-color: var(--accent-primary);
     background: linear-gradient(to bottom right, #ffffff, rgba(79, 70, 229, 0.05));
     box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1);
+}
+
+.paper-layout {
+    max-width: 1100px;
+}
+
+.paper-card {
+    padding: 2rem 2.5rem;
+}
+
+.paper-card section + section {
+    margin-top: 2rem;
+}
+
+.reference-list {
+    padding-left: 1.25rem;
+}
+
+.reference-list li {
+    margin-bottom: 0.6rem;
 }
 
 .finding {
@@ -373,7 +404,6 @@ blockquote {
     font-weight: 600;
 }
 
-/* Images */
 .figure-container {
     border-radius: 12px;
     overflow: hidden;
@@ -396,7 +426,6 @@ blockquote {
     transform: scale(1.02);
 }
 
-/* Footer */
 footer {
     padding: 3rem 0;
     border-top: 1px solid var(--border-color);
