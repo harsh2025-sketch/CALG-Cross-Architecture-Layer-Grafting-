@@ -7,6 +7,16 @@
     <meta name="description" content="Experimental Fusion of Heterogeneous Foundation Models Under Consumer Hardware Constraints">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
     <header class="hero">
@@ -103,8 +113,10 @@
 
             <section>
                 <h2>Methodology</h2>
-                <p>The CALG pipeline consists of asymmetric cross-modal translation, task vector extraction, rank-truncated dimensional alignment, and deep layer structural integration. The host backbone is Phi-4-mini-instruct with hidden dimension $D_{host} = 3072$.</p>
-                <p>The vision encoder output is projected from $7680$ dimensions into the host space using a bridge matrix, while task deltas are extracted from donor checkpoints and mapped into late-stage transformer blocks $L_{28}$ to $L_{31}$.</p>
+                <p>The CALG pipeline consists of asymmetric cross-modal translation, task vector extraction, rank-truncated dimensional alignment, and deep layer structural integration. The host backbone is Phi-4-mini-instruct with hidden dimension \(D_{host} = 3072\).</p>
+                <div class="equation">\[ h_v \in \mathbb{R}^{B \times S_v \times D_v} \]</div>
+                <p>where \(D_v = 7680\), and the vision encoder output is projected into the host space using a bridge matrix. Task deltas are then mapped into late-stage transformer blocks \(L_{28}\) to \(L_{31}\).</p>
+                <div class="equation">\[ W_{bridge} \in \mathbb{R}^{7680 \times 3072} \]</div>
                 <p>Dynamic graph stabilization patches repair runtime issues such as RoPE handling, tied weights map alignment, and strict keyword argument validation.</p>
             </section>
 
